@@ -1,7 +1,67 @@
+/* 1️⃣ Tailwind imports */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* 2️⃣ Global body styles */
 body {
-  font-family: sans-serif;
+  @apply bg-[#0A192F] text-white font-inter;
+  margin: 0;
+  padding: 0;
+}
+
+/* 3️⃣ Headings and text */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
+p {
+  line-height: 1.6;
+  color: #d1d5db; /* Slightly gray for readability */
+}
+
+/* 4️⃣ Buttons default styling */
+button {
+  @apply px-5 py-2 rounded-xl transition;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* 5️⃣ Accent colors for your theme */
+.text-cyan {
+  color: #00B8D9;
+}
+
+.text-orange {
+  color: #FF6F00;
+}
+
+.bg-cyan {
+  background-color: #00B8D9;
+}
+
+.bg-orange {
+  background-color: #FF6F00;
+}
+
+.border-cyan {
+  border-color: #00B8D9;
+}
+
+.border-orange {
+  border-color: #FF6F00;
+}
+
+/* 6️⃣ Hover / Focus effects */
+button:hover {
+  @apply opacity-90;
+}
+
+.card {
+  @apply border border-cyan rounded-xl p-6 transition hover:shadow-lg hover:shadow-cyan/50;
+}
+
+/* 7️⃣ Image placeholder style */
+.image-placeholder {
+  @apply h-64 border-2 border-dashed border-orange rounded-xl flex items-center justify-center text-orange;
 }
