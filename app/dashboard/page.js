@@ -1,5 +1,4 @@
 "use client";
-
 import { Bar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -11,7 +10,6 @@ import {
   Legend,
 } from "chart.js";
 
-// Register Chart.js components
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 export default function Dashboard() {
@@ -19,9 +17,9 @@ export default function Dashboard() {
     labels: ["School A", "School B", "School C", "School D"],
     datasets: [
       {
-        label: "Preparedness (%)",
-        data: [75, 40, 60, 90],
-        backgroundColor: ["#22c55e", "#f97316", "#3b82f6", "#e11d48"], // green, orange, blue, red
+        label: "Preparedness Score",
+        data: [75, 60, 90, 50],
+        backgroundColor: "rgba(34,197,94,0.7)", // Tailwind green-500
       },
     ],
   };
@@ -29,35 +27,15 @@ export default function Dashboard() {
   const options = {
     responsive: true,
     plugins: {
-      legend: {
-        labels: { color: "#d1d5db" }, // gray-300 for text
-      },
-      title: {
-        display: true,
-        text: "School Preparedness Overview",
-        color: "#d1d5db",
-      },
-    },
-    scales: {
-      x: {
-        ticks: { color: "#d1d5db" },
-      },
-      y: {
-        ticks: { color: "#d1d5db" },
-        min: 0,
-        max: 100,
-      },
+      legend: { position: "top" },
+      title: { display: true, text: "School Preparedness Dashboard" },
     },
   };
 
   return (
     <div className="p-6 text-center">
-      <h1 className="text-3xl font-extrabold mb-6 text-green-400">Admin Dashboard</h1>
-      <p className="text-gray-300 mb-6 text-lg">
-        Track and monitor preparedness levels across schools.
-      </p>
-
-      <div className="max-w-3xl mx-auto bg-[#1E293B] p-6 rounded-xl shadow-lg">
+      <h1 className="text-3xl font-bold mb-6 text-green-400">Admin Dashboard</h1>
+      <div className="max-w-3xl mx-auto bg-gray-800 p-6 rounded-2xl shadow-lg">
         <Bar data={data} options={options} />
       </div>
     </div>
