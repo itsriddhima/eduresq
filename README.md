@@ -1,0 +1,2 @@
+# eduresq
+EduResQ - SIH project
